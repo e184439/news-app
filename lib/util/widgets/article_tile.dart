@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp_e184439/common/styles.dart';
 import 'package:newsapp_e184439/models/article.dart';
+import 'package:newsapp_e184439/util/common/constants.dart';
 
-class ArticleThumbnail extends StatelessWidget {
+class ArticleTile extends StatelessWidget {
   final Function onTap;
   final Article article;
-  const ArticleThumbnail({
+  const ArticleTile({
     Key? key,
     required this.onTap,
     required this.article,
@@ -15,7 +15,7 @@ class ArticleThumbnail extends StatelessWidget {
   Widget build(BuildContext context) {
     ImageProvider image;
     if (article.urlToImage == null) {
-      image = AssetImage('images/newsreader.png');
+      image = const AssetImage('images/newsreader.png');
     } else {
       image = NetworkImage(article.urlToImage!);
     }

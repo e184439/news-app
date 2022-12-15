@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp_e184439/models/article.dart';
-import 'package:newsapp_e184439/services/news.dart';
-
-import '../common/styles.dart';
-import '../widgets/article_thumbnail.dart';
+import 'package:newsapp_e184439/util/common/constants.dart';
+import 'package:newsapp_e184439/util/news_service.dart';
+import 'package:newsapp_e184439/util/widgets/article_tile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,15 +16,22 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('The News App'),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: const Text('The News App',
+            style: TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.teal)),
+        centerTitle: true,
         actions: [
           IconButton(
             onPressed: () async {
               var headlines = await getHeadlines();
               print(headlines);
             },
-            icon: const Icon(Icons.language),
-            tooltip: 'Change Language',
+            icon: const Icon(Icons.sort, color: Colors.teal),
+            tooltip: 'Sort',
           ),
         ],
       ),
@@ -116,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                       scrollDirection: Axis.horizontal,
                       itemCount: snapshot.data!.length,
                       itemBuilder: (context, index) {
-                        return ArticleThumbnail(
+                        return ArticleTile(
                           onTap: (Article article) {
                             print(article.title);
                           },
@@ -153,7 +159,7 @@ class _HomePageState extends State<HomePage> {
                       scrollDirection: Axis.horizontal,
                       itemCount: snapshot.data!.length,
                       itemBuilder: (context, index) {
-                        return ArticleThumbnail(
+                        return ArticleTile(
                           onTap: (Article article) {
                             print(article.title);
                           },
@@ -187,7 +193,7 @@ class _HomePageState extends State<HomePage> {
                       scrollDirection: Axis.horizontal,
                       itemCount: snapshot.data!.length,
                       itemBuilder: (context, index) {
-                        return ArticleThumbnail(
+                        return ArticleTile(
                           onTap: (Article article) {
                             print(article.title);
                           },
@@ -221,7 +227,7 @@ class _HomePageState extends State<HomePage> {
                       scrollDirection: Axis.horizontal,
                       itemCount: snapshot.data!.length,
                       itemBuilder: (context, index) {
-                        return ArticleThumbnail(
+                        return ArticleTile(
                           onTap: (Article article) {
                             print(article.title);
                           },

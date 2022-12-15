@@ -3,9 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:newsapp_e184439/models/article.dart';
-
-import '../common/constants.dart';
-import '../common/routes.dart';
+import 'package:newsapp_e184439/util/common/constants.dart';
 
 Future<List<Article>> getHeadlines() async {
   var headers = {

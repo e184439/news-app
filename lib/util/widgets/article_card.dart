@@ -3,10 +3,10 @@ import 'package:newsapp_e184439/models/news_article.dart';
 import 'package:newsapp_e184439/screens/single_news_article_page.dart';
 import 'package:newsapp_e184439/util/common/constants.dart';
 
-class ArticleTile extends StatelessWidget {
+class ArticleCard extends StatelessWidget {
   final Function onTap;
   final NewsArticle article;
-  const ArticleTile({
+  const ArticleCard({
     Key? key,
     required this.onTap,
     required this.article,
@@ -14,7 +14,7 @@ class ArticleTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ImageProvider image;
+    ImageProvider image = const AssetImage('images/newsreader.png');
     if (article.urlToImage == null) {
       image = const AssetImage('images/newsreader.png');
     } else {
@@ -36,9 +36,8 @@ class ArticleTile extends StatelessWidget {
       child: Hero(
         tag: article.title!,
         child: Container(
-          margin: const EdgeInsets.only(right: 16.0),
+          margin: const EdgeInsets.all(16.0),
           height: 200.0,
-          width: 260.0,
           decoration: BoxDecoration(
             border: Border.all(color: colorsPrimary),
             color: Colors.black,
@@ -54,7 +53,8 @@ class ArticleTile extends StatelessWidget {
             children: [
               Positioned(
                 bottom: 0.0,
-                width: 260.0,
+                width: 378.0,
+                height: 80.0,
                 child: Container(
                   padding: const EdgeInsets.all(8.0),
                   decoration: BoxDecoration(

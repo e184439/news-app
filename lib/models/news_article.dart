@@ -1,7 +1,7 @@
-import 'package:newsapp_e184439/models/source.dart';
+import 'package:newsapp_e184439/models/news_source.dart';
 
-class Article {
-  Source? source;
+class NewsArticle {
+  NewsSource? source;
   String? author;
   String? title;
   String? description;
@@ -10,7 +10,7 @@ class Article {
   String? publishedAt;
   String? content;
 
-  Article(
+  NewsArticle(
       {this.source,
       this.author,
       this.title,
@@ -20,8 +20,9 @@ class Article {
       this.publishedAt,
       this.content});
 
-  Article.fromJson(Map<String, dynamic> json) {
-    source = json['source'] != null ? Source.fromJson(json['source']) : null;
+  NewsArticle.fromJson(Map<String, dynamic> json) {
+    source =
+        json['source'] != null ? NewsSource.fromJson(json['source']) : null;
     author = json['author'];
     title = json['title'];
     description = json['description'];

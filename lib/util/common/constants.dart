@@ -11,4 +11,4 @@ const routeEverything = '/v2/everything';
 /// styles
 const colorsPrimary = Colors.teal;
 const textStyleTitle = TextStyle(
-    color: colorsPrimary, fontSize: 28.0, fontWeight: FontWeight.w300);
+    color: colorsPrimary, fontSize: 21.0, fontWeight: FontWeight.w400);
